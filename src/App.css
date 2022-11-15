@@ -1,38 +1,39 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(58, 58, 58);
 }
 
-.App-link {
-  color: #61dafb;
+.faceblob {
+  position: fixed;
+  top: 35px;
+  left: 20px;
+  height: 35vh;
+  width: 20vw;
+  margin: 35px;
+  border: 2px solid blue;
+  background-image: url('../public/ryanparker34.png');
+  background-color: transparent;
+  background-size: cover;
+  animation: animate_blob 6s linear infinite;
+  z-index: 3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes animate_blob {
+  0%,
+  100% {
+    border-radius: 40% 55% 70% 35% / 70% 30% 90% 40%;
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    border-radius: 25% 35% 90% 55% / 90% 50% 70% 30%;
+  }
+  50% {
+    border-radius: 25% 75% 60% 75% / 60% 70% 30% 80%;
+  }
+  25% {
+    border-radius: 25% 65% 60% 65% / 50% 60% 60% 10%;
   }
 }
