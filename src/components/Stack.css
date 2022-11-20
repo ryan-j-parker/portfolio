@@ -8,6 +8,22 @@
     color: rgb(97, 45, 104);
 }
 
-li {
-    text-decoration: none;
+.items {
+    padding-top: 30px;
+}
+
+.frame {
+
+}
+
+.db {
+
+}
+
+.tools {
+
+}
+
+ul {
+    list-style-type: none;
 }
