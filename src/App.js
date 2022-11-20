@@ -1,13 +1,15 @@
 import './App.css';
 import Header from './components/Header';
-import Main from './components/Main';
+import About from './components/About';
+import Stack from './components/Stack';
 
 function App() {
   return (
     <div className="App">
       <Header />
       <span className="faceblob" />
-      <Main />
+      <About />
+      <Stack />
     </div>
   );
 }

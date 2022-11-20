@@ -1,6 +1,6 @@
-import './Main.css';
+import './About.css';
 
-export default function Main() {
+export default function About() {
   return (
     <>
       <div className="greeting">

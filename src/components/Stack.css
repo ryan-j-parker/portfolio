@@ -1,0 +1,13 @@
+.stack {
+    height: 100vh;
+    background-color: rgb(97, 97, 97);
+    padding-top: 40px;
+}
+
+.head {
+    color: rgb(97, 45, 104);
+}
+
+li {
+    text-decoration: none;
+}
