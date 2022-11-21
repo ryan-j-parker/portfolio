@@ -1,7 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&family=Inconsolata&family=Kanit&family=Silkscreen&display=swap');
+
+:root {
+  --light-blue: #47e6ff;
+  --orange: #ff7b47;
+  --teal: #6ed6e6;
+  --blue: #5347ff;
+  --green: #47ff60;
+  --orange-plus: #ffa947;
+  --reddish: #ff4d47;
+  --yellow: #ffd747;
+  --pink: #ff4797;
+  --purple: #af47ff;
+}
+/* 
 html {
   overflow: hidden;
   overflow-x: hidden;
-}
+} */
+
+/* theme colors:
+
+  --light-blue: #47e6ff;
+  complementary:
+  --orange: #ff7b47;
+
+  monochromatic:
+  --teal: #6ed6e6;
+
+  analogous:
+  --blue: #5347ff;
+  --green: #47ff60;
+
+  split complementary:
+  --orange-plus: #ffa947;
+  --reddish: #ff4d47;
+
+  triadic:
+  --yellow: #ffd747;
+  --pink: #ff4797;
+
+  tetradic:
+  --orange
+  --yellow
+  --purple: #af47ff;
+  */
 
 .App {
   display: flex;
@@ -14,12 +56,10 @@ html {
 
 .faceblob {
   position: fixed;
-  /* top: 5px; */
-  left: 50px;
-  height: 40vh;
-  width: 25vw;
-  margin: 35px;
-  border: 5px solid rgb(98, 161, 255);
+  height: 160px;
+  width: 140px;
+  margin-top: -700px;
+  /* border: 8px solid var(--light-blue); */
   background-image: url('../public/ryanparker34.png');
   background-color: transparent;
   background-size: cover;

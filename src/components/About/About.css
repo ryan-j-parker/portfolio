@@ -1,0 +1,79 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.greeting {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.about-text {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial,
+    sans-serif;
+  color: rgb(75, 75, 75);
+  background-color: #47e6ff;
+  height: 100%;
+  padding-top: 340px;
+  /* flex-wrap: wrap; */
+  /* width: 50%; */
+  /* margin-left: 420px; */
+  /* margin-top: 300px; */
+  /* height: 85vh; */
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 120px;
+}
+
+.hi {
+  color: var(--orange);
+}
+.my {
+  margin: auto;
+  font-size: 1.1rem;
+}
+.ryan {
+  font-family: 'Silkscreen';
+  background-color: rgb(243, 243, 243);
+  color: var(--reddish);
+  font-size: 1.5rem;
+  border: 0.5px solid grey;
+  padding: 5px;
+}
+.dev {
+  font-size: 1.2rem;
+  font-family: 'Kanit';
+}
+.apps {
+  font-size: 1.4rem;
+  font-family: 'Gemunu Libre';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* text-align: center;
+  margin: 10px auto; */
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+/* 
+.ryan {
+  margin-left: 20px;
+}
+*/

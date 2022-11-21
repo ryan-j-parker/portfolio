@@ -1,0 +1,86 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  /* height: 280px; */
+  box-sizing: border-box;
+  margin: 10px;
+  width: auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 380px;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  /* background-color: rgba(0, 128, 0, 0.39); */
+  /* width: 200px; */
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed green;
+}
+
+.image-box .github {
+    visibility: hidden;
+}
+
+.image-box:hover .github {
+    visibility: visible;
+}
+
+.image-box .netlify {
+    visibility: hidden;
+}
+
+.image-box:hover .netlify {
+    visibility: visible;
+}
+
+.github-icon, .netlify-icon {
+    height: 50px;
+    width: auto;
+    /* margin: -100px 20px; */
+  position: relative;
+  z-index: 2;
+  }
+
+.github, .netlify {
+  position: relative;
+  top: 50%;
+  margin: 0 15px;
+}
+/* 
+.github:hover, .netlify:hover {
+  box-shadow: 0 0 12px 3px rgba(255, 142, 50, 0.9);
+} */
+
+.proj-img {
+  height: 180px;
+  width: auto;
+  object-fit: contain;
+  box-shadow: inset -3px -3px 12px -4px rgba(0, 0, 0, 0.9);
+  filter: grayscale(0%);
+  transition: all 0.5s ease;
+}
+
+.proj-img:hover {
+  filter: grayscale(100%);
+  opacity: 30%;
+}
+
+.name {
+  font-family: 'Silkscreen';
+  font-size: auto;
+  margin: -15px auto;
+  font-weight: 600;
+  text-align: justify;
+}
+
+.desc {
+  font-family: 'Inconsolata';
+  text-align: justify;
+  width: 235px;
+}
