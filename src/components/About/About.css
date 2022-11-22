@@ -77,3 +77,24 @@ h2 {
   margin-left: 20px;
 }
 */
+
+.link-box {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.header-link {
+margin: 5px;
+/* position: fixed; */
+/* top: 0; */
+/* right: 0; */
+/* float: right; */
+}
+
+.header-logo {
+  height: 30px;
+  width: auto;
+  padding: 10px;
+  z-index: 5;
+}

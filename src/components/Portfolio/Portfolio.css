@@ -1,65 +1,63 @@
-.wrapper {
-  display: flex;
-  flex-direction: column;
-}
+/* .wrapper {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  width: 50vw;
+} */
 
 .card {
-  /* height: 280px; */
   box-sizing: border-box;
-  margin: 10px;
-  width: auto;
+  margin: 0 auto;
+  width: 260px;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 380px;
-  /* flex-wrap: wrap; */
   flex-direction: column;
-  /* background-color: rgba(0, 0, 0, 0.2); */
-  /* background-color: rgba(0, 128, 0, 0.39); */
-  /* width: 200px; */
   align-items: center;
   justify-content: center;
   border: 2px dashed green;
+
+  /* height: 280px; */
+  /* flex-wrap: wrap; */
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  /* background-color: rgba(0, 128, 0, 0.39); */
+  /* width: 200px; */
 }
 
 .image-box .github {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .image-box:hover .github {
-    visibility: visible;
+  visibility: visible;
 }
 
 .image-box .netlify {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .image-box:hover .netlify {
-    visibility: visible;
+  visibility: visible;
 }
 
-.github-icon, .netlify-icon {
-    height: 50px;
-    width: auto;
-    /* margin: -100px 20px; */
-  position: relative;
-  z-index: 2;
-  }
-
-.github, .netlify {
+.github,
+.netlify {
   position: relative;
   top: 50%;
   margin: 0 15px;
 }
-/* 
-.github:hover, .netlify:hover {
+
+.github:hover,
+.netlify:hover {
   box-shadow: 0 0 12px 3px rgba(255, 142, 50, 0.9);
-} */
+}
 
 .proj-img {
   height: 180px;
-  width: auto;
+  width: 260px;
+  /* width: auto; */
   object-fit: contain;
   box-shadow: inset -3px -3px 12px -4px rgba(0, 0, 0, 0.9);
   filter: grayscale(0%);
@@ -73,8 +71,9 @@
 
 .name {
   font-family: 'Silkscreen';
+  width: auto;
   font-size: auto;
-  margin: -15px auto;
+  margin: -30px auto;
   font-weight: 600;
   text-align: justify;
 }
@@ -84,3 +83,53 @@
   text-align: justify;
   width: 235px;
 }
+
+.github-icon,
+.netlify-icon {
+  height: 50px;
+  width: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/*                    */
+
+/* 
+
+.card {
+  box-sizing: border-box;
+  margin: 10px auto;
+  width: auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: 'Gemunu Libre';
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.2); 
+  background-color: rgba(0, 128, 0, 0.39);
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proj-img {
+  height: 175px;
+  width: auto;
+  object-fit: contain;
+  box-shadow: inset -3px -3px 12px -4px rgba(0, 0, 0, 0.9);
+}
+
+.name {
+  font-size: 3rem;
+  margin: 10px auto;
+  font-weight: 600;
+  text-align: justify;
+}
+
+.desc {
+  text-align: justify;
+  width: 235px;
+} */
