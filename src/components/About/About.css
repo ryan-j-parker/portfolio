@@ -5,6 +5,7 @@ body {
 }
 
 .greeting {
+  position: fixed;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -78,21 +79,23 @@ h2 {
 }
 */
 
-.link-box {
+.header-box {
   display: flex;
   align-items: center;
   flex-direction: row;
+  z-index: 15;
+  position: fixed;
+  top: 220px;
 }
 
 .header-link {
 margin: 5px;
-/* position: fixed; */
 /* top: 0; */
 /* right: 0; */
 /* float: right; */
 }
 
-.header-logo {
+.logo-img {
   height: 30px;
   width: auto;
   padding: 10px;

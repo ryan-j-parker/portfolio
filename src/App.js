@@ -11,10 +11,11 @@ function App() {
       {/* <Header /> */}
       <About />
       <div className="projects-wrap">
+        {/* <h1 className="projects">Projects:</h1> */}
         <Portfolio />
       </div>
       <Stack />
-      <Scene />
+      {/* <Scene /> */}
     </div>
   );
 }

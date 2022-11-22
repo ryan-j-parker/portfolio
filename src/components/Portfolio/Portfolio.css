@@ -1,13 +1,6 @@
-/* .wrapper {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  width: 50vw;
-} */
-
 .card {
   box-sizing: border-box;
-  margin: 0 auto;
+  margin: 20px;
   width: 260px;
   padding: 0;
   display: flex;
@@ -18,7 +11,8 @@
   align-items: center;
   justify-content: center;
   border: 2px dashed green;
-
+  background-color: rgb(70, 70, 70);
+  border-radius: 25px;
   /* height: 280px; */
   /* flex-wrap: wrap; */
   /* background-color: rgba(0, 0, 0, 0.2); */
@@ -49,9 +43,7 @@
   margin: 0 15px;
 }
 
-.github:hover,
-.netlify:hover {
-  box-shadow: 0 0 12px 3px rgba(255, 142, 50, 0.9);
+.github:hover .proj-img .netlify:hover {
 }
 
 .proj-img {
@@ -64,15 +56,27 @@
   transition: all 0.5s ease;
 }
 
-.proj-img:hover {
+.proj-img:hover,
+.proj-img:active {
+  filter: grayscale(100%);
+  opacity: 30%;
+}
+
+.netlify:hover .proj-img {
+  filter: grayscale(100%);
+  opacity: 30%;
+}
+
+.github:hover .proj-img {
   filter: grayscale(100%);
   opacity: 30%;
 }
 
 .name {
   font-family: 'Silkscreen';
+  color: white;
   width: auto;
-  font-size: auto;
+  font-size: 1.4rem;
   margin: -30px auto;
   font-weight: 600;
   text-align: justify;
@@ -80,6 +84,7 @@
 
 .desc {
   font-family: 'Inconsolata';
+  color: white;
   text-align: justify;
   width: 235px;
 }
@@ -91,45 +96,3 @@
   position: relative;
   z-index: 2;
 }
-
-/*                    */
-
-/* 
-
-.card {
-  box-sizing: border-box;
-  margin: 10px auto;
-  width: auto;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  font-family: 'Gemunu Libre';
-  flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.2); 
-  background-color: rgba(0, 128, 0, 0.39);
-  width: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.proj-img {
-  height: 175px;
-  width: auto;
-  object-fit: contain;
-  box-shadow: inset -3px -3px 12px -4px rgba(0, 0, 0, 0.9);
-}
-
-.name {
-  font-size: 3rem;
-  margin: 10px auto;
-  font-weight: 600;
-  text-align: justify;
-}
-
-.desc {
-  text-align: justify;
-  width: 235px;
-} */
