@@ -7,6 +7,21 @@
     width: 280px;
 }
 
+.tech {
+    height: 50px;
+    width: auto;
+    padding: 0 4px;
+}
+
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 0 5px;
+    padding-top: 5px;
+}
+
 .head {
     color: var(--teal);
 }

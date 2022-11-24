@@ -6,30 +6,27 @@ import './Main.css';
 
 export default function Main() {
   return (
-    <div>
-      <>
-        <div className="App">
-          <div className="app-routes">
-            <div className="about-wrap">
-              <About />
-            </div>
-            <div className="buffer-left" />
-            <div className="wrap-box">
-              {/* <div className="projects-label">
+    <>
+      <div className="App">
+        {/* <div className="app-routes"> */}
+        <div className="about-wrap">
+          <About />
+        </div>
+        {/* <div className="buffer-left"></div> */}
+        <div className="wrap-box">
+          {/* <div className="projects-label">
                 <h1 className="projects">Projects:</h1>
               </div> */}
-              <div className="projects-wrap">
-                <Portfolio />
-              </div>
-              <div className="buffer-right" />
-            </div>
-            <div className="stack-wrap">
-              <Stack />
-            </div>
+          <div className="projects-wrap">
+            <Portfolio />
           </div>
+          {/* <div className="buffer-right"></div> */}
         </div>
-      </>
-      ;
-    </div>
+        <div className="stack-wrap">
+          <Stack />
+        </div>
+      </div>
+      {/* </div> */}
+    </>
   );
 }

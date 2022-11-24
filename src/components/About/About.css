@@ -10,7 +10,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
 
 .about-text {
@@ -23,7 +22,7 @@ body {
   /* flex-wrap: wrap; */
   /* width: 50%; */
   /* margin-left: 420px; */
-  /* margin-top: 300px; */
+  margin-top: 250px;
   /* height: 85vh; */
   padding-left: 20px;
   padding-right: 20px;
@@ -32,10 +31,13 @@ body {
 
 .hi {
   color: var(--orange);
+  margin-bottom: 0;
 }
 .my {
-  margin: auto;
+  margin: 0 auto;
   font-size: 1.1rem;
+  margin-bottom: 35px;
+
 }
 .ryan {
   font-family: 'Silkscreen';
@@ -44,14 +46,17 @@ body {
   font-size: 1.5rem;
   border: 0.5px solid grey;
   padding: 5px;
+  margin-bottom: 35px;
 }
 .dev {
   font-size: 1.2rem;
   font-family: 'Kanit';
+  margin-top: 30px;
 }
 .apps {
   font-size: 1.4rem;
   font-family: 'Gemunu Libre';
+  margin-top: 35px;
 }
 /* 
 h1,
