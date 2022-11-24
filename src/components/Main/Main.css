@@ -1,0 +1,92 @@
+.projects-wrap {
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+  /* border: 2px dotted blue; */
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+  position: absolute;
+  /* margin: 50px; */
+  /* padding-left: 0; */
+  /* margin-left: 180px; */
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* flex-direction: row; */
+  /* width: auto; */
+  /* margin: 0 auto; */
+  /* width: 50%; */
+  width: 100%;
+  /* margin-left: 12vw; */
+}
+
+.buffer-left {
+    /* border: 2px solid orange; */
+    width: 20%;
+    height: 100vh;
+    background-color: yellow;
+    position: fixed;
+}
+
+.buffer-right {
+    /* border: 2px solid rebeccapurple; */
+}
+
+.app-routes {
+  position: relative;
+  width: 100vw;
+}
+
+.about-wrap {
+  position: relative;
+  /* width: 15%; */
+  z-index: 15;
+}
+
+.wrap-box {
+  position: relative;
+  width: 68.4vw;
+  border: 2px dotted red;
+  height: 100vh;
+    left: 11.4%;
+
+  /* padding-left: 15vw; */
+  /* padding: 0 15vw; */
+}
+
+/* .stack-wrap {
+  width: 15%;
+} */
+
+.wrap-box {
+  position: fixed;
+  display: flex;
+  /* width: auto; */
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* top: 100px; */
+  /* left: 100px; */
+  /* display: grid; */
+  /* grid-template-rows: 1fr 1fr; */
+  /* grid-template-columns: 4fr 2fr; */
+  margin: 0 auto;
+  padding: 0;
+}
+
+.projects-label {
+  position: fixed;
+  /* left: 25%; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  margin: 0 auto;
+}
+
+.stack-wrap {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+}

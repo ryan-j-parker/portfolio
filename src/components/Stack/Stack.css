@@ -1,19 +1,35 @@
 .stack {
     height: 100vh;
-    background-color: rgb(97, 97, 97);
+    background-color: var(--orange);
     padding-top: 80px;
+    position: fixed;
+    right: 0;
+    width: 280px;
 }
 
 .head {
-    color: rgb(97, 45, 104);
+    color: var(--teal);
+}
+
+.category {
+    color: var(--orange-plus);
+    margin: 0 auto;
+    margin-bottom: 5px;
+    box-shadow: 0 5px 18px -12px rgba(0, 0, 0, 1);
+}
+
+.item {
+    color: var(--reddish);
+    margin: 0 auto;
+    font-weight: 700;
 }
 
 .items {
     padding-top: 30px;
 }
 
-.frame {
-
+.frame, .db, .tools {
+    margin-top: 45px;
 }
 
 .db {

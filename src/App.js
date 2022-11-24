@@ -1,22 +1,16 @@
 import './App.css';
-import Header from './components/Header/Header';
-import About from './components/About/About';
-import Stack from './components/Stack/Stack';
 import Scene from './components/Scene/Scene';
-import { Portfolio } from './components/Portfolio/Portfolio';
+import { Routes, Route } from 'react-router-dom';
+import Main from './components/Main/Main';
 
 function App() {
   return (
-    <div className="App">
-      {/* <Header /> */}
-      <About />
-      <div className="projects-wrap">
-        {/* <h1 className="projects">Projects:</h1> */}
-        <Portfolio />
-      </div>
-      <Stack />
-      {/* <Scene /> */}
-    </div>
+    <>
+      <Routes>
+        <Route path="/scene" element={<Scene />} />
+        <Route path="/" element={<Main />} />
+      </Routes>
+    </>
   );
 }
 

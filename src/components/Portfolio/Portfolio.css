@@ -1,5 +1,7 @@
 .card {
   box-sizing: border-box;
+  /* position: relative; */
+  position: static;
   margin: 20px;
   width: 260px;
   padding: 0;
@@ -18,6 +20,16 @@
   /* background-color: rgba(0, 0, 0, 0.2); */
   /* background-color: rgba(0, 128, 0, 0.39); */
   /* width: 200px; */
+}
+
+.wrapper {
+  /* display: grid; */
+  
+  /* margin: 0 auto; */
+  /* position: relative; */
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* width: inherit; */
 }
 
 .image-box .github {

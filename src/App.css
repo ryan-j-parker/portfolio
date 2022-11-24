@@ -1,23 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&family=Inconsolata&family=Kanit&family=Silkscreen&display=swap');
 
-:root {
-  --light-blue: #47e6ff;
-  --orange: #ff7b47;
-  --teal: #6ed6e6;
-  --blue: #5347ff;
-  --green: #47ff60;
-  --orange-plus: #ffa947;
-  --reddish: #ff4d47;
-  --yellow: #ffd747;
-  --pink: #ff4797;
-  --purple: #af47ff;
-}
-/* 
-html {
-  overflow: hidden;
-  overflow-x: hidden;
-} */
-
 /* theme colors:
 
   --light-blue: #47e6ff;
@@ -45,33 +27,43 @@ html {
   --purple: #af47ff;
   */
 
+:root {
+  --light-blue: #47e6ff;
+  --orange: #ff7b47;
+  --teal: #6ed6e6;
+  --blue: #5347ff;
+  --green: #47ff60;
+  --orange-plus: #ffa947;
+  --reddish: #ff4d47;
+  --yellow: #ffd747;
+  --pink: #ff4797;
+  --purple: #af47ff;
+}
+
+* {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
+  box-sizing: border-box;
+  /* position: fixed; */
+  display: grid;
+  grid-template-columns: 1fr 7fr 2fr;
   display: flex;
   flex-direction: row;
-  text-align: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgb(58, 58, 58);
-  overflow-x: auto;
+  height: 100%;
+  /* width: 100vw; */
+  /* background-color: rgb(58, 58, 58); */
+  /* overflow-x: hidden; */
+  /* overflow-y: auto; */
+  /* margin: 0; */
+  /* padding: 0; */
 }
 
-.projects {
-  /* position: fixed; */
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
-
-.projects-wrap {
-  /* overflow: hidden; */
-  position: relative;
-  margin: 50px;
-  padding-left: 200px;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-}
-
+/* <-----     ---     ---  !! DO NOT EDIT below this comment !!  ---     ---     -----> */
+/* image and animation */
 .faceblob {
   position: fixed;
   height: 160px;
