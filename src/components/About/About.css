@@ -30,34 +30,64 @@ body {
 }
 
 .hi {
-  color: var(--orange);
+  color: #ff8757;
   margin-bottom: 0;
 }
 .my {
   margin: 0 auto;
   font-size: 1.1rem;
   margin-bottom: 35px;
-
 }
 .ryan {
   font-family: 'Silkscreen';
   background-color: rgb(243, 243, 243);
   color: var(--reddish);
   font-size: 1.5rem;
-  border: 0.5px solid grey;
+  border-radius: 5px;
+  /* border: 0.5px solid grey; */
   padding: 5px;
   margin-bottom: 35px;
+  box-shadow: 0 0 26px 12px;
 }
+
+.ryan:hover {
+  font-size: 1.6rem;
+  color: var(--pink);
+}
+
 .dev {
   font-size: 1.2rem;
   font-family: 'Kanit';
-  margin-top: 30px;
+  margin-top: 25px;
 }
+
 .apps {
-  font-size: 1.4rem;
-  font-family: 'Gemunu Libre';
-  margin-top: 35px;
+  font-size: 1rem;
+  font-weight: bolder;
+  font-family: 'Kanit';
+  margin-top: 25px;
 }
+
+.creative {
+  /* word-break: break-all; */
+  word-wrap: break-word;
+  /* width: 180px; */
+  /* box-shadow: 0 0 12px -1px  */
+  color: #ff8757;
+}
+
+#c {
+  color: #ff918e;
+}
+
+#s {
+  color: #ff7a75;
+}
+
+#d {
+  color: var(--reddish);
+}
+
 /* 
 h1,
 h2,
@@ -94,15 +124,23 @@ h2 {
 }
 
 .header-link {
-margin: 5px;
-/* top: 0; */
-/* right: 0; */
-/* float: right; */
+  margin: 5px;
+  /* top: 0; */
+  /* right: 0; */
+  /* float: right; */
 }
 
 .logo-img {
   height: 30px;
   width: auto;
-  padding: 10px;
+  margin: 10px;
   z-index: 5;
+}
+
+.logo-img:hover {
+  scale: 1.2;
+}
+
+.logo-img:active {
+  scale: 0.98;
 }

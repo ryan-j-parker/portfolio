@@ -77,6 +77,10 @@
   z-index: 3;
 }
 
+.faceblob:hover {
+  background-image: url('../public/hire-me.png');
+}
+
 @keyframes animate_blob {
   0%,
   100% {

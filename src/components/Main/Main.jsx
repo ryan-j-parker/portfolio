@@ -14,9 +14,9 @@ export default function Main() {
         </div>
         {/* <div className="buffer-left"></div> */}
         <div className="wrap-box">
-          {/* <div className="projects-label">
-                <h1 className="projects">Projects:</h1>
-              </div> */}
+          <div className="projects-label">
+            <h1 className="projects">Projects:</h1>
+          </div>
           {/* <div className="projects-wrap"> */}
           <Portfolio />
           {/* </div> */}

@@ -1,29 +1,42 @@
 .stack {
-    height: 100vh;
-    background-color: var(--orange);
-    /* padding-top: 80px; */
-    position: fixed;
-    right: 0;
-    width: 280px;
+  height: 100vh;
+  background-color: var(--orange);
+  /* padding-top: 80px; */
+  position: fixed;
+  right: 0;
+  width: 280px;
+}
+
+.twitter-timeline {
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.twitter-timeline::-webkit-scrollbar {
+  display: none;
 }
 
 .tech {
-    height: 50px;
-    width: auto;
-    padding: 3px 4px;
+  height: 50px;
+  width: auto;
+  padding: 3px 4px;
 }
 
 .icon-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin: 0 5px;
-    padding-top: 5px;
-    background-color: #ff8757;
-    height: 100%;
-    box-sizing: content-box;
-    border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 0 5px;
+  padding-top: 5px;
+  background-color: #ff8757;
+  height: 100%;
+  box-sizing: content-box;
+  border-radius: 10px;
 }
 /* 
 .tech #htmlcss {
@@ -32,53 +45,52 @@
 } */
 
 .head {
-    color: var(--teal);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
+  color: var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .stack-text {
-    font-size: 3.8rem;
-    /* margin-top: -40px; */
+  font-size: 3.8rem;
+  /* margin-top: -40px; */
 }
 
 .category {
-    color: var(--orange-plus);
-    margin: 0 auto;
-    margin-bottom: 5px;
-    box-shadow: 0 5px 18px -12px rgba(0, 0, 0, 1);
+  color: var(--orange-plus);
+  margin: 0 auto;
+  margin-bottom: 5px;
+  box-shadow: 0 5px 18px -12px rgba(0, 0, 0, 1);
 }
 
 .item {
-    color: var(--reddish);
-    margin: 0 auto;
-    font-weight: 700;
+  color: var(--reddish);
+  margin: 0 auto;
+  font-weight: 700;
 }
 
 .items {
-    /* padding-top: 30px; */
-    position: fixed;
-    bottom: 0;
+  /* padding-top: 30px; */
+  position: fixed;
+  bottom: 0;
 }
 
-.frame, .db, .tools {
-    /* margin-top: 45px; */
+.frame,
+.db,
+.tools {
+  /* margin-top: 45px; */
 }
 
 .frame {
-
 }
 
 .db {
-
 }
 
 .tools {
-
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }

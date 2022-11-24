@@ -3,19 +3,29 @@ import './Stack.css';
 export default function Stack() {
   return (
     <div className="stack">
-      <div className="head">
-        <h1 className="stack-text">Current tech stack:</h1>
-      </div>
+      <div className="head">{/* <h1 className="stack-text">Current tech stack:</h1> */}</div>
       <div className="items">
         <div className="frame">
           {/* <img id="htmlcss" className="tech" title="HTML, CSS, JS" src="../icons/html-css-js.png" /> */}
+          <a
+            className="twitter-timeline"
+            data-lang="en"
+            data-width="260"
+            data-height="500"
+            data-theme="dark"
+            data-chrome="noscrollbar"
+            data-tweet-limit="5"
+            href="https://twitter.com/ryanparkerdev?ref_src=twsrc%5Etfw"
+          >
+            Tweets by ryanparkerdev
+          </a>{' '}
           <h2 className="category">Frameworks</h2>
           <div className="icon-box">
             {/* <p className="item">React</p>
             <p className="item">Express</p>
             <p className="item">Three.js</p> */}
             <img className="tech" title="react.js" src="../icons/react-logo.png" />
-            <img className="tech" title="express.js" src="../icons/express.png" />
+            <img className="tech" title="express.js" src="../icons/express-icon.png" />
             <img className="tech" title="three.js" src="../icons/threejs-icon.png" />
           </div>
         </div>
