@@ -25,15 +25,15 @@
 }
 
 .buffer-left {
-    /* border: 2px solid orange; */
-    width: 20%;
-    height: 100vh;
-    background-color: yellow;
-    position: fixed;
+  /* border: 2px solid orange; */
+  width: 20%;
+  height: 100vh;
+  background-color: yellow;
+  position: fixed;
 }
 
 .buffer-right {
-    /* border: 2px solid rebeccapurple; */
+  /* border: 2px solid rebeccapurple; */
 }
 
 .app-routes {
@@ -49,13 +49,27 @@
 
 .wrap-box {
   position: relative;
-  width: 68.4vw;
+  left: 160px;
+  right: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  /* width: calc(100vw - 280px); */
   border: 2px dotted red;
   height: 100vh;
-    left: 11.4%;
+  margin-right: 280px;
+  /* left: 11.4%; */
 
   /* padding-left: 15vw; */
   /* padding: 0 15vw; */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.wrap-box::-webkit-scrollbar {
+  display: none;
 }
 
 /* .stack-wrap {
@@ -86,8 +100,8 @@
 }
 
 .stack-wrap {
-    position: fixed;
-    z-index: 5;
-    top: 0;
-    width: 20vw;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  width: 20vw;
 }

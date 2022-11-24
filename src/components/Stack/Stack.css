@@ -1,7 +1,7 @@
 .stack {
     height: 100vh;
     background-color: var(--orange);
-    padding-top: 80px;
+    /* padding-top: 80px; */
     position: fixed;
     right: 0;
     width: 280px;
@@ -10,7 +10,7 @@
 .tech {
     height: 50px;
     width: auto;
-    padding: 0 4px;
+    padding: 3px 4px;
 }
 
 .icon-box {
@@ -20,10 +20,28 @@
     flex-wrap: wrap;
     margin: 0 5px;
     padding-top: 5px;
+    background-color: #ff8757;
+    height: 100%;
+    box-sizing: content-box;
+    border-radius: 10px;
 }
+/* 
+.tech #htmlcss {
+    margin: 120px auto;
+    padding: 0;
+} */
 
 .head {
     color: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.stack-text {
+    font-size: 3.8rem;
+    /* margin-top: -40px; */
 }
 
 .category {
@@ -40,11 +58,17 @@
 }
 
 .items {
-    padding-top: 30px;
+    /* padding-top: 30px; */
+    position: fixed;
+    bottom: 0;
 }
 
 .frame, .db, .tools {
-    margin-top: 45px;
+    /* margin-top: 45px; */
+}
+
+.frame {
+
 }
 
 .db {

@@ -4,16 +4,16 @@ export default function Stack() {
   return (
     <div className="stack">
       <div className="head">
-        <h1>Current tech stack:</h1>
+        <h1 className="stack-text">Current tech stack:</h1>
       </div>
       <div className="items">
         <div className="frame">
-          <h2 className="category">Frameworks/libraries</h2>
+          {/* <img id="htmlcss" className="tech" title="HTML, CSS, JS" src="../icons/html-css-js.png" /> */}
+          <h2 className="category">Frameworks</h2>
           <div className="icon-box">
             {/* <p className="item">React</p>
             <p className="item">Express</p>
             <p className="item">Three.js</p> */}
-            <img className="tech" title="HTML, CSS, JS" src="../icons/html-css-js.png" />
             <img className="tech" title="react.js" src="../icons/react-logo.png" />
             <img className="tech" title="express.js" src="../icons/express.png" />
             <img className="tech" title="three.js" src="../icons/threejs-icon.png" />

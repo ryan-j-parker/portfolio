@@ -1,7 +1,7 @@
 .card {
   box-sizing: border-box;
   /* position: relative; */
-  position: static;
+  /* position: relative; */
   margin: 20px;
   width: 260px;
   padding: 0;
@@ -24,7 +24,7 @@
 
 .wrapper {
   /* display: grid; */
-  
+    /* height: 100vh; */
   /* margin: 0 auto; */
   /* position: relative; */
   /* display: flex; */
@@ -53,9 +53,6 @@
   position: relative;
   top: 50%;
   margin: 0 15px;
-}
-
-.github:hover .proj-img .netlify:hover {
 }
 
 .proj-img {
