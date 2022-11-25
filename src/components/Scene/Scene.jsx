@@ -1,9 +1,12 @@
 /* eslint-disable react/no-unknown-property */
-import React, { useRef, useState } from 'react';
+import * as THREE from 'three';
+import React, { useRef, useState, useEffect } from 'react';
 import './Scene.css';
-import { Canvas, extend, useFrame, useThree } from '@react-three/fiber';
+import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 extend({ OrbitControls });
+
+import img from '../../r-fav.png';
 
 function Box(props) {
   const mesh = useRef();
@@ -12,68 +15,65 @@ function Box(props) {
   const [active, setActive] = useState(false);
 
   useFrame(() => {
-    mesh.current.rotation.y += 0.01;
+    mesh.current.rotation.x += 0.001;
+    mesh.current.rotation.y += Math.sin(0.1);
   });
+
+  const texture = useLoader(THREE.TextureLoader, img);
+
 
   return (
     <mesh
       {...props}
       ref={mesh}
-      scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
+      scale={active ? [3, 3, 3] : [2, 2, 2]}
       onClick={(e) => setActive(!active)}
       onPointerOver={(e) => setHover(true)}
       onPointerOut={(e) => setHover(false)}
     >
-      <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
-      <meshNormalMaterial metalness={0.1} attach="material" />
+      <texture attach="map" image={img} onUpdate={(self) => (self.needsUpdate = true)} />
+      <boxBufferGeometry attach="geometry" />
+      <meshStandardMaterial attach="material" map={texture} toneMapped={false} />
     </mesh>
   );
 }
 
+function Image() {
+  const texture = useLoader(THREE.TextureLoader, img);
+  return (
+    <mesh>
+      <planeBufferGeometry attach="geometry" args={[4, 4]} doubleSide="true" />
+      <meshBasicMaterial attach="material" map={texture} toneMapped={false} />
+    </mesh>
+  );
+}
+
+
 export default function Scene() {
-  // function MyMesh() {
-  //   const shapeRef = useRef();
-  //   // useFrame((state, delta) => {
-  //   useFrame(() => {
-  //     if (shapeRef.current) {
-  //       shapeRef.current.rotate.x += 0.01;
-  //     }
-  //   });
-  //   // shapeRef.current.rotation.y += delta;
-  //   // });
 
-  //   return <mesh ref={shapeRef} />;
-  // }
-
-  // const { camera, gl } = useThree();
-
-  // console.log(OrbitControls);
+  const CameraController = () => {
+    const { camera, gl } = useThree();
+    useEffect(() => {
+      const controls = new OrbitControls(camera, gl.domElement);
+      return () => {
+        controls.dispose();
+      };
+    }, [camera, gl]);
+    return null;
+  };
 
   return (
     <>
-      {/* <OrbitControls args={[camera, gl.domElement]} />
-      <div className="scene"> */}
-      <Canvas
-      // camera={{
-      //   fov: 45,
-      //   near: 0.1,
-      //   far: 200,
-      //   position: [3, 2, 6]
-      // }}
-      >
+      <Canvas>
+        <CameraController />
         <ambientLight intensity={1} />
+        <Image />
         <spotLight position={[10, 10, 10]} angle={0.15} />
-        <Box position={[-1.2, 0, 0]} />
-        <Box position={[1.2, 0, 0]} />
-        {/* <MyMesh /> */}
-        {/* <mesh
-          //  ref={ shapeRef }
-          >
-            <meshNormalMaterial color="orange" />
-            <boxGeometry />
-          </mesh> */}
+        <Box position={[-1.5, 3, 0]} />
+        <Box position={[1.5, 3, 0]} />
+        <Box position={[1.5, 0, 0]} />
+        <Box position={[-1.5, 0, 0]} />
       </Canvas>
-      {/* </div> */}
     </>
   );
 }
