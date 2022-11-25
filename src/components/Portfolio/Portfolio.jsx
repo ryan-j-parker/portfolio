@@ -6,12 +6,11 @@ export const Portfolio = () => {
   const card = Projects.map((project) => {
     return (
       <>
-        {/* <div className="wrapper"> */}
         <div key={project.id} className="card">
           <p className="name">{project.name}</p>
           <div className="image-box">
             <a className="github" href={project.github} rel="noreferrer" target="_blank">
-              <img className="github-icon" src="../github-icon.png" />
+              <img className="github-icon" src="../github-icon-white.png" />
             </a>
             <a className="netlify" href={project.netlify} rel="noreferrer" target="_blank">
               <img className="netlify-icon" src="../netlify-icon.png" />
@@ -20,7 +19,6 @@ export const Portfolio = () => {
           </div>
           <p className="desc">{project.description}</p>
         </div>
-        {/* </div> */}
       </>
     );
   });

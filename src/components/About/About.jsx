@@ -4,6 +4,20 @@ export default function About() {
   return (
     <>
       <div className="header-box">
+        <div className="bg"></div>
+        <a href="mailto:ryan.jos.parker+io@gmail.com">
+          <p className="sitename">&#x2709;&#xFE0F;</p>
+        </a>
+        <span
+          title="
+            ryan.jos.parker@gmail.com
+            linkedin.com/in/ryanparkerdev
+            twitter.com/ryanparkerdev
+          ~~ gaze upon my beautiful repo collection: ~~
+            github.com/ryan-j-parker
+          "
+          className="faceblob"
+        />
         <a href="https://www.linkedin.com/in/ryanparkerdev" target="_blank" rel="noreferrer">
           <img src="../linkedin-icon.png" className="logo-img" />
         </a>
@@ -15,7 +29,6 @@ export default function About() {
         </a>
       </div>
       <div className="greeting">
-        <span className="faceblob" />
         <div className="about-text">
           <h1 className="hi">Hi!</h1>
           <h5 className="my">my name is</h5>
@@ -23,19 +36,28 @@ export default function About() {
           <h2 className="dev">
             I&apos;m a{' '}
             <p className="creative" id="c">
-              creative
+              &#123; creative
             </p>{' '}
             <p className="creative" id="s">
               software
             </p>{' '}
             <p className="creative" id="d">
-              developer
+              developer &#125;
             </p>{' '}
             located in Vancouver, WA.
           </h2>
           <h3 className="apps">
             I develop responsive, intuitive, and scalable apps with React and Express.
           </h3>
+          <h3 className="alchemy">
+            I will be graduating from 
+            <br /><a className="alchemy-link" href="https://www.alchemycodelab.com">Alchemy Code Lab</a><br /> 
+            in February of 2023 as a full-stack software
+            developer with
+            <p className="hours">1000+ hours</p>
+            of training.
+          </h3>
+          <h3 className="industry">I&apos;m looking forward to entering the tech industry!</h3>
         </div>
       </div>
     </>

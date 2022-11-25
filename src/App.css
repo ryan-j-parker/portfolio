@@ -48,32 +48,26 @@
 
 .App {
   box-sizing: border-box;
-  /* position: fixed; */
   display: grid;
   grid-template-columns: 1fr 7fr 2fr;
   display: flex;
   flex-direction: row;
   height: 100%;
-  /* width: 100vw; */
-  /* background-color: rgb(58, 58, 58); */
-  /* overflow-x: hidden; */
-  /* overflow-y: auto; */
-  /* margin: 0; */
-  /* padding: 0; */
 }
 
 /* <-----     ---     ---  !! DO NOT EDIT below this comment !!  ---     ---     -----> */
 /* image and animation */
+
 .faceblob {
   position: fixed;
+  top: 30px;
+  left: 4px;
   height: 160px;
   width: 140px;
-  margin-top: -700px;
-  /* border: 8px solid var(--light-blue); */
   background-image: url('../public/ryanparker34.png');
   background-color: transparent;
   background-size: cover;
-  animation: animate_blob 8s linear infinite;
+  animation: animate-faceblob 8s linear infinite;
   z-index: 3;
 }
 
@@ -81,16 +75,16 @@
   background-image: url('../public/hire-me.png');
 }
 
-@keyframes animate_blob {
+@keyframes animate-faceblob {
   0%,
   100% {
-    border-radius: 50% 55% 70% 35% / 60% 70% 30% 80%;
+    border-radius: 50% 55% 70% 35% / 30% 70% 30% 80%;
   }
   25% {
-    border-radius: 20% 35% 80% 55% / 40% 50% 70% 30%;
+    border-radius: 20% 35% 80% 55% / 80% 50% 70% 30%;
   }
   50% {
-    border-radius: 80% 75% 60% 75% / 80% 70% 30% 80%;
+    border-radius: 80% 75% 60% 75% / 60% 70% 30% 80%;
   }
   25% {
     border-radius: 40% 65% 60% 65% / 30% 50% 70% 30%;

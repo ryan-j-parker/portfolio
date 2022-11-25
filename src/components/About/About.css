@@ -6,10 +6,24 @@ body {
 
 .greeting {
   position: fixed;
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #47e6ff;
+  box-shadow: 0 0 10px -4px;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  z-index: 5;
+}
+
+.greeting::-webkit-scrollbar {
+  display: none;
+}
+
+.faceblob::-webkit-scrollbar {
+  visibility: hidden;
 }
 
 .about-text {
@@ -19,11 +33,7 @@ body {
   background-color: #47e6ff;
   height: 100%;
   padding-top: 340px;
-  /* flex-wrap: wrap; */
-  /* width: 50%; */
-  /* margin-left: 420px; */
   margin-top: 250px;
-  /* height: 85vh; */
   padding-left: 20px;
   padding-right: 20px;
   width: 120px;
@@ -32,22 +42,25 @@ body {
 .hi {
   color: #ff8757;
   margin-bottom: 0;
+  z-index: 9;
 }
+
 .my {
   margin: 0 auto;
   font-size: 1.1rem;
   margin-bottom: 35px;
 }
+
 .ryan {
   font-family: 'Silkscreen';
   background-color: rgb(243, 243, 243);
   color: var(--reddish);
   font-size: 1.5rem;
   border-radius: 5px;
-  /* border: 0.5px solid grey; */
   padding: 5px;
   margin-bottom: 35px;
   box-shadow: 0 0 26px 12px;
+  z-index: 9;
 }
 
 .ryan:hover {
@@ -69,10 +82,7 @@ body {
 }
 
 .creative {
-  /* word-break: break-all; */
   word-wrap: break-word;
-  /* width: 180px; */
-  /* box-shadow: 0 0 12px -1px  */
   color: #ff8757;
 }
 
@@ -88,17 +98,6 @@ body {
   color: var(--reddish);
 }
 
-/* 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  /* text-align: center;
-  margin: 10px auto; 
-} */
-
 h1 {
   font-size: 4rem;
   margin: 0;
@@ -108,39 +107,49 @@ h2 {
   font-size: 1.4rem;
 }
 
-/* 
-.ryan {
-  margin-left: 20px;
-}
-*/
-
-.header-box {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  z-index: 15;
-  position: fixed;
-  top: 220px;
-}
-
 .header-link {
   margin: 5px;
-  /* top: 0; */
-  /* right: 0; */
-  /* float: right; */
 }
 
-.logo-img {
-  height: 30px;
-  width: auto;
-  margin: 10px;
-  z-index: 5;
+.alchemy {
+  margin-top: 25px;
+  font-family: 'Kanit';
+  font-weight: 600;
+  word-break: keep-all;
+  font-size: 1.1rem;
 }
 
-.logo-img:hover {
-  scale: 1.2;
+.alchemy-link {
+  text-decoration: none;
+  color: var(--green);
+  background-color: var(--purple);
+  /* width: 200px; */
+  /* padding: 0 20px; */
+  text-align: center;
+  font-size: 1.2rem;
+  word-break: keep-all;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-bottom: -25px;
 }
 
-.logo-img:active {
-  scale: 0.98;
+.industry {
+  margin: 10px auto;
+  padding: 20px 0;
+  font-family: 'Kanit';
+  color: rgb(121, 121, 121);
+}
+
+.hours {
+  color: var(--pink);
+}
+
+.sitename {
+  position: fixed;
+  top: -4px;
+  left: 2px;
+  color: rgb(0, 183, 255);
+  font-weight: 700;
+  font-size: 1.3rem;
 }
