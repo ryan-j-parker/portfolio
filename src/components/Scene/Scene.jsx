@@ -1,56 +1,65 @@
 /* eslint-disable react/no-unknown-property */
 import * as THREE from 'three';
+import { DoubleSide } from 'three';
 import React, { useRef, useState, useEffect } from 'react';
 import './Scene.css';
 import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 extend({ OrbitControls });
 
-import img from '../../r-fav.png';
+import icon from '../../r-fav.png';
 
-function Box(props) {
-  const mesh = useRef();
-
-  const [hover, setHover] = useState(false);
-  const [active, setActive] = useState(false);
-
-  useFrame(() => {
-    mesh.current.rotation.x += 0.001;
-    mesh.current.rotation.y += Math.sin(0.1);
-  });
-
-  const texture = useLoader(THREE.TextureLoader, img);
-
-
-  return (
-    <mesh
-      {...props}
-      ref={mesh}
-      scale={active ? [3, 3, 3] : [2, 2, 2]}
-      onClick={(e) => setActive(!active)}
-      onPointerOver={(e) => setHover(true)}
-      onPointerOut={(e) => setHover(false)}
-    >
-      <texture attach="map" image={img} onUpdate={(self) => (self.needsUpdate = true)} />
-      <boxBufferGeometry attach="geometry" />
-      <meshStandardMaterial attach="material" map={texture} toneMapped={false} />
-    </mesh>
-  );
-}
+import SoundPalette from './SoundPalette';
+import Collabo from './Collabo';
+import Pokemon from './Pokemon';
+import Colors from './Colors';
+import TicTacToe from './TicTacToe';
+import Flags from './Flags';
+import Algos from './Algos';
+import DevPal from './DevPal';
+import Zodiac from './Zodiac';
+import Marker from './Marker';
+import { FirstPersonControls } from '@react-three/drei';
+extend({ FirstPersonControls });
 
 function Image() {
-  const texture = useLoader(THREE.TextureLoader, img);
+  const iconTexture = useLoader(THREE.TextureLoader, icon);
   return (
-    <mesh>
-      <planeBufferGeometry attach="geometry" args={[4, 4]} doubleSide="true" />
-      <meshBasicMaterial attach="material" map={texture} toneMapped={false} />
+    <mesh scale={[1, 1, 1]}>
+      <planeBufferGeometry attach="geometry" args={[10, 10]} />
+      <meshBasicMaterial attach="material" side={DoubleSide} map={iconTexture} toneMapped={false} />
     </mesh>
   );
 }
 
+function Foo(props) {
+  const ref = useRef();
+  const data = useScroll();
+  useFrame(() => {
+    // data.offset = current scroll position, between 0 and 1, dampened
+    // data.delta = current delta, between 0 and 1, dampened
+
+    // Will be 0 when the scrollbar is at the starting position,
+    // then increase to 1 until 1 / 3 of the scroll distance is reached
+    const a = data.range(0, 1 / 3);
+    // Will start increasing when 1 / 3 of the scroll distance is reached,
+    // and reach 1 when it reaches 2 / 3rds.
+    const b = data.range(1 / 3, 1 / 3);
+    // Same as above but with a margin of 0.1 on both ends
+    const c = data.range(1 / 3, 1 / 3, 0.1);
+    // Will move between 0-1-0 for the selected range
+    const d = data.curve(1 / 3, 1 / 3);
+    // Same as above, but with a margin of 0.1 on both ends
+    const d = data.curve(1 / 3, 1 / 3, 0.1);
+    // Returns true if the offset is in range and false if it isn't
+    const e = data.visible(2 / 3, 1 / 3);
+    // The visible function can also receive a margin
+    const f = data.visible(2 / 3, 1 / 3, 0.1);
+  });
+  return <mesh ref={ref} {...props} />;
+}
 
 export default function Scene() {
-
   const CameraController = () => {
     const { camera, gl } = useThree();
     useEffect(() => {
@@ -64,15 +73,21 @@ export default function Scene() {
 
   return (
     <>
-      <Canvas>
+      <Canvas style={{ height: '100vh', width: '100vw' }}>
+        <Marker />
         <CameraController />
         <ambientLight intensity={1} />
-        <Image />
+        <Image position={[0, 0, 10]} />
         <spotLight position={[10, 10, 10]} angle={0.15} />
-        <Box position={[-1.5, 3, 0]} />
-        <Box position={[1.5, 3, 0]} />
-        <Box position={[1.5, 0, 0]} />
-        <Box position={[-1.5, 0, 0]} />
+        <SoundPalette position={[0, 0, 0]} />
+        <Collabo position={[0, 3, 0]} />
+        <Pokemon position={[3, 3, 0]} />
+        <TicTacToe position={[-3, 0, 0]} />
+        <Flags position={[-3, 3, 0]} />
+        <DevPal position={[3, 0, 0]} />
+        <Colors position={[-3, -3, 0]} />
+        <Algos position={[0, -3, 0]} />
+        <Zodiac position={[3, -3, 0]} />
       </Canvas>
     </>
   );

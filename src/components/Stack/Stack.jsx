@@ -43,6 +43,7 @@ export default function Stack() {
             <img className="tech" title="Netlify" src="../netlify-icon.png" />
             <img className="tech" title="Postman" src="../icons/postman-icon.png" />
             <img className="tech" title="Slack" src="../icons/slack-icon.png" />
+            <img className="tech" title="Storybook" src="../icons/storybook-icon.png" />
             <img className="tech" title="Zoom" src="../icons/zoom-icon-text.png" />
           </div>
         </div>
