@@ -7,17 +7,15 @@ body,
     padding: 0;
 }
 
-/* Canvas {
-    height: 100vh;
-    width: 100vw;
-} */
+Canvas {
+    background-color: black;
+}
 
 .scene {
+    background-color: black;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* overflow-x: hidden; */
-    /* overflow-y: hidden; */
 }

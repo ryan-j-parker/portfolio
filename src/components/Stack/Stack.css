@@ -8,12 +8,20 @@
   box-shadow: -4px 0 7px -6px;
 }
 
+.twitter-box {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: green;
+}
+
 .twitter-timeline {
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
   position: fixed;
-  top: 10px;
+  top: 2vh;
   right: 10px;
   height: 55%;
   z-index: 5;
@@ -25,7 +33,7 @@
 }
 
 .tech {
-  height: 50px;
+  height: 5vh;
   width: auto;
   padding: 3px 4px;
 }
@@ -44,8 +52,8 @@
 }
 
 .frame {
-    height: 96px;
-    z-index: 8;
+    height: auto;
+    z-index: 9;
 }
 
 .category {
@@ -58,12 +66,12 @@
 }
 
 .db {
-    height: 96px;
+    height: auto;
     z-index: 8;
 }
 
 .tools {
-    height: 208px;
+    height: auto;
     z-index: 8;
 }
 

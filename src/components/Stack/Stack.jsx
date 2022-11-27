@@ -4,7 +4,7 @@ export default function Stack() {
   return (
     <div className="stack">
       <div className="items">
-        <div className="frame">
+        <div className="twitter-box">
           <a
             className="twitter-timeline"
             data-lang="en"
@@ -17,6 +17,8 @@ export default function Stack() {
           >
             Tweets by ryanparkerdev
           </a>{' '}
+        </div>
+        <div className="frame">
           <h2 className="category">Frameworks</h2>
           <div className="icon-box">
             <img className="tech" title="react.js" src="../icons/react-logo.png" />
