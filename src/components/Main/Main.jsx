@@ -13,7 +13,11 @@ export default function Main() {
         </div>
         <div className="wrap-box">
           <div className="projects-label">
-            <h1 className="projects">Projects:</h1>
+            <a href="/scene">
+              <h1 className="projects" title="Click to see why the page takes so long to load! 😂">
+                Projects:
+              </h1>
+            </a>
           </div>
           <Portfolio />
           <p className="mark">&#169;2022 Ryan J. Parker</p>

@@ -31,7 +31,7 @@ export default function SoundPalette(props) {
         title="Sound Palette: a synesthetic sound visualization 3D experience"
       >
         <texture attach="map" onUpdate={(self) => (self.needsUpdate = true)} />
-        <boxBufferGeometry attach="geometry" />
+        <boxGeometry attach="geometry" />
         <meshStandardMaterial attach="material" map={sqSP} toneMapped={false} />
       </mesh>
     </>

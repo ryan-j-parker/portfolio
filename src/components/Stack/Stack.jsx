@@ -16,7 +16,7 @@ export default function Stack() {
             href="https://twitter.com/ryanparkerdev?ref_src=twsrc%5Etfw"
           >
             Tweets by ryanparkerdev
-          </a>{' '}
+          </a>
         </div>
         <div className="frame">
           <h2 className="category">Frameworks</h2>

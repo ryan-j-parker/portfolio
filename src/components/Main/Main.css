@@ -55,6 +55,17 @@ body {
   animation: animate-projects 4s linear;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.projects:hover {
+  scale: 1.05;
+  cursor: pointer;
+  text-shadow: 1px 1px #ff392c;
+}
+
 @keyframes animate-projects{
   0%{
     transform: translateX(500px);

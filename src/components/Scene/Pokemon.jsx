@@ -30,7 +30,7 @@ export default function Pokemon(props) {
         onPointerOut={(e) => setHover(false)}
       >
         <texture attach="map" onUpdate={(self) => (self.needsUpdate = true)} />
-        <boxBufferGeometry attach="geometry" />
+        <boxGeometry attach="geometry" />
         <meshStandardMaterial attach="material" map={sqPK} toneMapped={false} />
       </mesh>
     </>

@@ -4,9 +4,10 @@ import { DoubleSide } from 'three';
 import React, { useRef, useState, useEffect } from 'react';
 import './Scene.css';
 import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber';
+import { useTexture } from '@react-three/drei';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 extend({ OrbitControls });
-
+import { gsap } from 'gsap';
 import icon from '../../r-fav.png';
 
 import SoundPalette from './SoundPalette';
@@ -31,36 +32,108 @@ import dmserif from '../../DM Serif Display_Regular.json';
 import titanOne from '../../Titan One_Regular.json';
 import luckiest from '../../Luckiest Guy_Regular.json';
 
-function Serif() {
+function DevpalText() {
   const font = new FontLoader().parse(dmserif);
 
   return (
     <>
-      <mesh position={[-15, 4, -3]}>
-        <textGeometry args={['interact with the 3D objects to learn more about my projects', { font, size: 2, height: 1.2 }]} />
+      <mesh position={[-12, 0, -2]} rotation={[-0.6, 0.4, 0.3]}>
+        <textGeometry args={['devPal', { font, size: 2, height: 1.2 }]} />
         <meshNormalMaterial attach="material" color={'white'} />
       </mesh>
     </>
   );
 }
 
-function Lucky() {
+function CollaboText() {
+  const font = new FontLoader().parse(dmserif);
+
+  return (
+    <>
+      <mesh position={[3, 5, -9]} rotation={[0.5, -0.6, -0.3]}>
+        <textGeometry args={['collabo', { font, size: 2, height: 1.2 }]} />
+        <meshNormalMaterial attach="material" color={'white'} />
+      </mesh>
+    </>
+  );
+}
+
+function AlgosText() {
+  const font = new FontLoader().parse(dmserif);
+
+  return (
+    <>
+      <mesh position={[3, -3, -16]} rotation={[-0.6, 0.3, -0.3]}>
+        <textGeometry args={['3x3x3 algorithms', { font, size: 2, height: 1.2 }]} />
+        <meshNormalMaterial attach="material" color={'white'} />
+      </mesh>
+    </>
+  );
+}
+
+function TicTacText() {
   const font = new FontLoader().parse(luckiest);
 
   return (
-    <mesh position={[-10, -4, 0]}>
-      <textGeometry args={['Pokemon Compendium', { font, size: 2, height: 1.2 }]} />
-      <meshNormalMaterial attach="material" color={'green'} roughness={0.5}/>
+    <>
+      <mesh position={[8, 3, -12]} rotation={[-0.5, 0.8, 0.3]}>
+        <textGeometry args={['tic-tac-toe', { font, size: 2, height: 1.2 }]} />
+        <meshNormalMaterial attach="material" color={'white'} />
+      </mesh>
+    </>
+  );
+}
+
+function PokemonText() {
+  const font = new FontLoader().parse(luckiest);
+
+  return (
+    <mesh position={[-10, -2, -14]} rotation={[-0.8, 0.4, -0.2]}>
+      <textGeometry args={['pokemon compendium', { font, size: 2, height: 1.2 }]} />
+      <meshNormalMaterial attach="material" color={'green'} roughness={0.5} />
     </mesh>
   );
 }
 
-function Titan() {
+function ZodiacText() {
+  const font = new FontLoader().parse(luckiest);
+
+  return (
+    <mesh position={[0, -3, -12]} rotation={[0.3, -0.6, -0.5]}>
+      <textGeometry args={['zodiac', { font, size: 2, height: 1.2 }]} />
+      <meshNormalMaterial attach="material" color={'green'} roughness={0.5} />
+    </mesh>
+  );
+}
+
+function SoundText() {
   const font = new FontLoader().parse(titanOne);
 
   return (
-    <mesh position={[-10, 4, -10]}>
+    <mesh position={[-16, 4.5, -12]} rotation-y={0.6} rotation-x={0.2}>
       <textGeometry args={['sound palette', { font, size: 2, height: 1.2 }]} />
+      <meshNormalMaterial attach="material" color={'white'} />
+    </mesh>
+  );
+}
+
+function ColorText() {
+  const font = new FontLoader().parse(titanOne);
+
+  return (
+    <mesh position={[6, 0, -8]} rotation={[-0.6, -0.2, -1]}>
+      <textGeometry args={['color router', { font, size: 2, height: 1.2 }]} />
+      <meshNormalMaterial attach="material" color={'white'} />
+    </mesh>
+  );
+}
+
+function FlagsText() {
+  const font = new FontLoader().parse(titanOne);
+
+  return (
+    <mesh position={[-16, -1, -16]} rotation={[-0, -0.2, 0.3]}>
+      <textGeometry args={['world flags', { font, size: 2, height: 1.2 }]} />
       <meshNormalMaterial attach="material" color={'white'} />
     </mesh>
   );
@@ -70,8 +143,78 @@ function ImagePlane() {
   const iconTexture = useLoader(THREE.TextureLoader, icon);
   return (
     <mesh scale={[5, 5, 5]} position={[0, 0, -45]}>
-      <planeBufferGeometry attach="geometry" args={[10, 10]} />
+      <planeGeometry attach="geometry" args={[10, 10]} />
       <meshBasicMaterial attach="material" side={DoubleSide} map={iconTexture} toneMapped={false} />
+    </mesh>
+  );
+}
+
+function TexturePlane() {
+  const props = useTexture({
+    map: 'crystal/color.jpg',
+    displacementMap: 'crystal/height.png',
+    normalMap: 'crystal/normal.jpg',
+    roughnessMap: 'crystal/roughness.jpg',
+    aoMap: 'crystal/ao.jpg',
+  });
+
+  const propsL = useTexture({
+    map: '/lava/color.jpg',
+    displacementMap: 'lava/disp.png',
+    aoMap: 'lava/ao.jpg',
+    roughnessMap: 'lava/rough.jpg',
+    normalMap: 'lava/norm.jpg',
+    alphaMap: 'lava/mask.jpg',
+  });
+
+  const propsR = useTexture({
+    map: '/rock/rocks-color.jpg',
+    displacementMap: 'rock/rocks-height.png',
+    aoMap: 'rock/rocks-ao.jpg',
+    roughnessMap: 'rock/rocks-rough.jpg',
+    normalMap: 'rock/rocks-normal.jpg',
+  });
+
+  return (
+    <>
+      <mesh scale={[4, 2, 4]} position={[0, -22, 0]} rotation-x={Math.PI * -0.5}>
+        <planeGeometry attach="geometry" args={[10, 20, 10, 20]} />
+        <meshStandardMaterial
+          {...propsL}
+          attach="material"
+          displacementScale={1}
+          side={DoubleSide}
+        />
+      </mesh>
+
+      <mesh scale={[4, 2, 4]} position={[-22, 0, 0]} rotation-y={Math.PI * 0.5}>
+        <planeGeometry attach="geometry" args={[10, 20, 10, 20]} />
+        <meshStandardMaterial
+          {...props}
+          attach="material"
+          displacementScale={2}
+          side={DoubleSide}
+        />
+      </mesh>
+
+      <mesh scale={[4, 2, 4]} position={[24, 0, 0]} rotation-y={Math.PI * -0.5}>
+        <planeGeometry attach="geometry" args={[10, 20, 10, 20]} />
+        <meshStandardMaterial
+          {...propsR}
+          attach="material"
+          displacementScale={2}
+          side={DoubleSide}
+        />
+      </mesh>
+    </>
+  );
+}
+
+function Spheres() {
+  return (
+    <mesh position={[-10, 0, -10]} rotation={[0, 0, 0]}>
+      <sphereGeometry attach="geometry" args={[2, 32, 32]} />
+      <meshNormalMaterial attach="material" color={'white'} />
     </mesh>
   );
 }
@@ -91,8 +234,19 @@ export default function Scene() {
   return (
     <>
       <Canvas style={{ height: '100vh', width: '100vw' }}>
-        <Marker />
-        {/* <CameraController />
+        {/* <Marker /> */}
+        <Spheres />
+        <TexturePlane />
+        <DevpalText />
+        <SoundText />
+        <PokemonText />
+        <CollaboText />
+        <TicTacText />
+        <ColorText />
+        <FlagsText />
+        <ZodiacText />
+        <AlgosText />
+        <CameraController />
         <ambientLight intensity={1} />
         <ImagePlane />
         <spotLight position={[10, 10, 10]} angle={0.15} />
@@ -104,15 +258,12 @@ export default function Scene() {
         <DevPal position={[3, 0, 0]} />
         <Colors position={[-3, -3, 0]} />
         <Algos position={[0, -3, 0]} />
-        <Zodiac position={[3, -3, 0]} /> */}
-        <Serif />
-        <Titan />
-        <Lucky />
-        <CameraController />
+        <Zodiac position={[3, -3, 0]} />
+        {/* <CameraController />
         <ambientLight intensity={1} />
         <ImagePlane />
         <spotLight position={[10, 10, 10]} angle={0.15} />
-        <SoundPalette scale={[4, 4, 4]} position={[0, 0, 0]} />
+        <SoundPalette position={[0, 0, 0]} />
         <Collabo position={[3, 0, 0]} />
         <Pokemon position={[6, 0, 0]} />
         <TicTacToe position={[9, 0, 0]} />
@@ -120,7 +271,7 @@ export default function Scene() {
         <DevPal position={[-3, 0, 0]} />
         <Colors position={[-6, 0, 0]} />
         <Algos position={[-9, 0, 0]} />
-        <Zodiac position={[-12, 0, 0]} />
+        <Zodiac position={[-12, 0, 0]} /> */}
       </Canvas>
     </>
   );

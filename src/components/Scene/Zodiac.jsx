@@ -30,7 +30,7 @@ export default function Zodiac(props) {
         onPointerOut={(e) => setHover(false)}
       >
         <texture attach="map" onUpdate={(self) => (self.needsUpdate = true)} />
-        <boxBufferGeometry attach="geometry" />
+        <boxGeometry attach="geometry" />
         <meshStandardMaterial attach="material" map={sqZO} toneMapped={false} />
       </mesh>
     </>
