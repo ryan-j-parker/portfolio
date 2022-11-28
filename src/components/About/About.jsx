@@ -32,7 +32,13 @@ export default function About() {
         <div className="about-text">
           <h1 className="hi">Hi!</h1>
           <h5 className="my">my name is</h5>
-          <h2 className="ryan">Ryan Parker</h2>
+          <h2 className="ryan" title="
+            I'm currently working on v2 
+            of this site, which will be
+            a full-stack app built with
+            React, Express, and Supabase.
+            Please share your feedback!
+          ">Ryan Parker</h2>
           <h2 className="dev">
             I&apos;m a{' '}
             <p className="creative" id="c">

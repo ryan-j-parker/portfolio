@@ -9,11 +9,13 @@
 }
 
 .twitter-box {
-  height: auto;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: green;
+  /* margin: 0 auto; */
+  background-color: #ff8757;
+  box-shadow: inset 0 -1px 10px -6px;
 }
 
 .twitter-timeline {
@@ -26,6 +28,12 @@
   height: 55%;
   z-index: 5;
   border-radius: 10px;
+}
+
+.twitter-follow-button {
+  margin-top: 92vh;
+  z-index: 9;
+  padding: 15px;
 }
 
 .twitter-timeline::-webkit-scrollbar {
@@ -52,27 +60,27 @@
 }
 
 .frame {
-    height: auto;
-    z-index: 9;
+  height: auto;
+  z-index: 9;
 }
 
 .category {
-    z-index: 9;
+  z-index: 9;
 }
 
 .icon-box {
-    height: auto;
-    z-index: 9;
+  height: auto;
+  z-index: 9;
 }
 
 .db {
-    height: auto;
-    z-index: 8;
+  height: auto;
+  z-index: 8;
 }
 
 .tools {
-    height: auto;
-    z-index: 8;
+  height: auto;
+  z-index: 8;
 }
 
 .head {

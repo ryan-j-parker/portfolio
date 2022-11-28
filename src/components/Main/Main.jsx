@@ -14,7 +14,10 @@ export default function Main() {
         <div className="wrap-box">
           <div className="projects-label">
             <a href="/scene">
-              <h1 className="projects" title="Click to see why the page takes so long to load! 😂">
+              <h1 className="projects" title="
+              Click to see why the page takes so long to load! 😂
+              ~ work in progress ~
+              ">
                 Projects:
               </h1>
             </a>

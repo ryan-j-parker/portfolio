@@ -17,6 +17,14 @@ export default function Stack() {
           >
             Tweets by ryanparkerdev
           </a>
+          <a
+            href="https://twitter.com/ryanparkerdev?ref_src=twsrc%5Etfw"
+            className="twitter-follow-button"
+            data-size="large"
+            data-show-count="false"
+          >
+            Follow @ryanparkerdev
+          </a>
         </div>
         <div className="frame">
           <h2 className="category">Frameworks</h2>

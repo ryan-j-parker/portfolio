@@ -4,7 +4,7 @@ import { DoubleSide } from 'three';
 import React, { useRef, useState, useEffect } from 'react';
 import './Scene.css';
 import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber';
-import { useTexture } from '@react-three/drei';
+import { useTexture, Stats } from '@react-three/drei';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 extend({ OrbitControls });
 import { gsap } from 'gsap';
@@ -63,7 +63,7 @@ function AlgosText() {
 
   return (
     <>
-      <mesh position={[3, -3, -16]} rotation={[-0.6, 0.3, -0.3]}>
+      <mesh position={[-1, -3, -16]} rotation={[-0.6, 0.3, -0.3]}>
         <textGeometry args={['3x3x3 algorithms', { font, size: 2, height: 1.2 }]} />
         <meshNormalMaterial attach="material" color={'white'} />
       </mesh>
@@ -210,14 +210,61 @@ function TexturePlane() {
   );
 }
 
-function Spheres() {
+function Sphere() {
+  const sphereRef = useRef();
+
+  useFrame(({ clock }) => {
+    const t = clock.getElapsedTime();
+    // sphereRef.current.position.x = t + 2;
+    if (sphereRef.current.position.x > 10) {
+      sphereRef.current.position.x = t - 2;
+    }
+    sphereRef.current.position.x = t + 2;
+  });
+
+  const texture = useLoader(THREE.TextureLoader, '/rock/rocks-color.jpg');
+
   return (
-    <mesh position={[-10, 0, -10]} rotation={[0, 0, 0]}>
+    <mesh map={texture} ref={sphereRef} position={[0, 0, 0]} rotation={[0, 0, 0]}>
       <sphereGeometry attach="geometry" args={[2, 32, 32]} />
       <meshNormalMaterial attach="material" color={'white'} />
     </mesh>
   );
 }
+
+// function OrbitalAnchor() {
+//   return (
+//     <mesh>
+//       <sphereGeometry attach="geometry" args={[1, 1, 1]} />
+//       <meshNormalMaterial attach="material" />
+//     </mesh>
+//   );
+// }
+
+const tempBoxes = new THREE.Object3D();
+
+const Boxes = ({ i, j }) => {
+  const material = new THREE.MeshLambertMaterial({ color: '#affecd' });
+  const boxesGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+  const ref = useRef();
+
+  useFrame(({ clock }) => {
+    let counter = 0;
+    const t = clock.oldTime * 0.001;
+    for (let x = 0; x < i; x++) {
+      for (let z = 0; z < j; z++) {
+        const id = counter++;
+        tempBoxes.position.set(i / 2 - x, 0, j / 2 - z);
+        tempBoxes.rotation.y = t;
+        tempBoxes.updateMatrix();
+        ref.current.setMatrixAt(id, tempBoxes.matrix);
+      }
+    }
+    ref.current.instanceMatrix.needsUpdate = true;
+  });
+
+  return <instancedMesh position-y={-25.5} ref={ref} args={[boxesGeometry, material, i * j]} />;
+};
 
 export default function Scene() {
   const CameraController = () => {
@@ -235,7 +282,9 @@ export default function Scene() {
     <>
       <Canvas style={{ height: '100vh', width: '100vw' }}>
         {/* <Marker /> */}
-        <Spheres />
+        <Sphere />
+        <Boxes i={350} j={350} />
+        <Stats />
         <TexturePlane />
         <DevpalText />
         <SoundText />

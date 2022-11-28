@@ -8,17 +8,12 @@ export default function Marker(props) {
   const markerRef = useRef();
   const vector = new THREE.Vector3();
 
-  // console.log('vector: ', vector);
-  // console.log('markerRef: ', markerRef);
-  // console.log('markerRef.current: ', markerRef.current);
-
   useFrame((state) => {
     if (clicked) {
       state.camera.lookAt(markerRef.current.position);
       // eslint-disable-next-line no-undef
       state.camera.position.lerp(vector.set(xPosition, yPosition, zPosition), 0.01);
       state.camera.updateProjectionMatrix();
-      // console.log('state.camera: ', state.camera);
     }
     return null;
   });
