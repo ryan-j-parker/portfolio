@@ -1,20 +1,23 @@
 .home {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  position: fixed;
+  /* margin: 0; */
+  /* padding: 0; */
+  /* box-sizing: border-box; */
+  /* position: fixed; */
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-rows: repeat(7, 1fr);
   grid-template-areas:
-    'a a a a a'
-    'b b b b b'
-    'c c c c c'
-    'd d d d d'
-    'e e e e e'
-    'f f f f f'
-    'g g g g g'
-    'h h h h h';
+    "a b c d e"
+    "f g h i j"
+    "k l m n o"
+    "p q r s t"
+    "u v w x y"
+    "z 1 2 3 4"
+    "5 6 7 8 9"
+  /* width: auto; */
+  /* margin-left: 10%; */
+  /* margin-right: 10%; */
+
 }
 
 .about {
@@ -23,18 +26,20 @@
   border-radius: 10px;
   width: 100%;
   display: flex;
-  margin: 0 auto;
-  height: auto;
+  flex-direction: column;
+  /* margin: 0 auto; */
+  /* height: auto; */
 }
 
 .headshot-frame {
-  position: relative;
+  /* position: relative; */
+  grid-area: a;
   display: flex;
   background-color: #35363d;
 }
 
 .headshot {
-  position: relative;
+  /* position: relative; */
   height: 200px;
   width: auto;
   object-fit: cover;
@@ -45,15 +50,23 @@
 .statement {
   color: white;
   border: 2px dashed rgb(0, 255, 0);
-  padding: 10px;
+  /* padding: 10px; */
   width: auto;
   border-radius: 10px;
   background-color: #35363d;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+}
+
+.make {
+  /* margin: 0 auto; */
+  background-color: #35363d;
+  grid-area: b;
+  /* top: 20vh; */
 }
 
 .p1 {
   font-size: 3rem;
+  grid-area: b;
 }
 
 .p2 {
@@ -63,15 +76,6 @@
   font-size: 3.6rem;
   position: relative;
   bottom: 0;
-}
-
-.make {
-  width: 40vw;
-  margin: 0 auto;
-  background-color: #35363d;
-  grid-area: b;
-  position: relative;
-  top: 20vh;
 }
 
 .p4 {

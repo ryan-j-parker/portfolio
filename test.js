@@ -257,6 +257,19 @@ const Boxes = ({ i, j }) => {
   return <instancedMesh position-y={-25.5} ref={ref} args={[boxesGeometry, material, i * j]} />;
 };
 
+function addStar() {
+  const geometry = new THREE.SphereGeometry(0.125, 24, 24);
+  const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+  const star = new THREE.Mesh(geometry, material);
+
+  const [x, y, z] = Array(3)
+    .fill()
+    .map(() => THREE.MathUtils.randFloatSpread(200));
+
+  star.position.set(x, y, z);
+}
+Array(400).fill().forEach(addStar);
+
 export default function Scene() {
   const CameraController = () => {
     const { camera, gl } = useThree();
